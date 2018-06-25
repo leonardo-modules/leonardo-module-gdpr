@@ -13,7 +13,7 @@ class GDPRWidget(Widget):
     email_address = models.CharField("Webmaster e-mail", max_length=255)
     resources = models.TextField(
         _('Resources for obtaining personal information '), blank=True, default="<p>%s</p>" % ('Empty element'))
-    made_by = models.CharField("Made by with prefix", max_length=255)
+    made_by = models.CharField("Made by with prefix", max_length=255, blank=True, null=True)
 
     widgets = {
         'resources': get_htmltext_widget

@@ -74,6 +74,6 @@
 <p>Část dokumentů je zveřejněna v některém z formátů aplikací Microsoft Office. Pro všechny tyto formáty je na stránkách společnosti Microsoft k dispozici prohlížeč, který si můžete zdarma stáhnout a nainstalovat na Váš počítač; případně si můžete zdarma stáhnout kancelářský balík Open Office.</p>
 
 <h2>Informace o autorovi webu</h2>
-<p>WWW stránky {{ widget.made_by }}. Stránky spravuje {{ widget.company }}. Prezentace / portál je provozován(-a) na publikačním systému LeonardoCMS. V případě dotazů nebo nalezení technických problémů je možné kontaktovat autory e-mailem na {{ widget.email_address }}.</p>
+<p>{% if widget.made_by %}WWW stránky {{ widget.made_by }}.{% endif %} Stránky spravuje {{ widget.company }}. Prezentace / portál je provozován(-a) na publikačním systému LeonardoCMS. V případě dotazů nebo nalezení technických problémů je možné kontaktovat autory e-mailem na {{ widget.email_address }}.</p>
 
 {% endblock %}
