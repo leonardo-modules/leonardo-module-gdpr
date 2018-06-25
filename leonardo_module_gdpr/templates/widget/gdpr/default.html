@@ -2,10 +2,16 @@
 {% load i18n %}
 
 {% block content %}
+<style type="text/css">
+.resources-gdpr ul {
+    padding-bottom: 10px;
+    list-style-type: disc;
+}
+</style>
 
 <h2>Autorská práva</h2>
 
-<p>Vlastníkem a provozovatelem internetových stránek <a href="/">{{ widget.domain_name }} je společnost {{ widget.company }}, která je v souladu se zák. č. 121/2000 Sb., autorský zákon, oprávněna vykonávat majetková práva k těmto internetovým stránkám (dále jen „Provozovatel“).</p>
+<p>Vlastníkem a provozovatelem internetových stránek <a href="/">{{ widget.domain_name }}</a> je společnost {{ widget.company_name }}, která je v souladu se zák. č. 121/2000 Sb., autorský zákon, oprávněna vykonávat majetková práva k těmto internetovým stránkám (dále jen „Provozovatel“).</p>
 <p>Provozovateli náleží všechna autorská práva k veškerému obsahu, který Provozovatel umísťuje na stránkách {{ widget.domain_name }}, včetně textu, designu stránek, technických náčrtů, grafiky, veškerých vyobrazení na těchto stránkách, jakož i k výběru a způsobu uspořádání souborů obsažených na těchto stránkách.</p>
 <p>Práva a povinnosti Provozovatele a uživatelů při používání těchto stránek se řídí těmito Pravidly. Tato Pravidla se vztahují na všechny osoby, které navštíví tyto stránky (dále jen „Uživatelé“). Uživatel vyjádří souhlas s těmito Pravidly tím, že vstoupí na kteroukoliv z www stránek Provozovatele či jakýmkoliv způsobem užije jakoukoliv informaci umístěnou v rámci www stránek Provozovatele.</p>
 <p>Zveřejnění jakýchkoliv údajů či informací na stránkách {{ widget.domain_name }}, s výjimkou tohoto dokumentu, nemá povahu žádného právního úkonu, nebude-li v jednotlivých případech výslovně stanoveno jinak.</p>
@@ -20,19 +26,21 @@
 <p>Provozovatel si však vyhrazuje právo použít nebo předat jakýkoli údaj, který bude potřebný k naplnění právních předpisů, k ochraně integrity sítě, ke splnění požadavku Uživatele nebo při soudním vyšetřování a vyšetřování ve veřejném zájmu.</p>
 
 {% if widget.resources %}
+<div class="resources-gdpr">
 <h3>Zdroje pro získání osobních údajů</h3>
 {{ widget.resources|safe }}
-<p>Pokud si Uživatel přeje opravit osobní data, které o něm Provozovatel má, může jej o to požádat na emailové adrese {{ widget.email_address }} nebo na poštovní adrese uvedené na stránce Kontakty či stránce o autorských právech.</p>
+<p>Pokud si Uživatel přeje opravit osobní data, které o něm Provozovatel má, může jej o to požádat na emailové adrese <a href="mailto:{{ widget.email_address }}">{{ widget.email_address }}</a> nebo na poštovní adrese uvedené na stránce Kontakty či stránce o autorských právech.</p>
+</div>
 {% endif %}
 
 <h2>Kódy třetích stran</h2>
 {% if config.GOOGLE_ANALYTICS_INFO %}
 <p>Na tomto webu používáme kódy od společností Google, které nám pomáhají analyzovat chování návštěvníků webu.</p>
 <h3>Universal Analytics</h3>
-<p>Tyto stránky využívají službu Universal Analytics  (Google Analytics), poskytovanou společností Google, Inc. (dále jen „Google“). Služba Universal Analytics používá souborů „cookies„, které jsou textovými soubory ukládanými do vašeho počítače, umožňující analýzu způsobu užívání této stránky jejími uživateli. Informace vygenerované souborem cookie o užívání stránky (včetně vaší IP adresy) budou společností Google přeneseny a uloženy na serverech ve Spojených státech.</p>
+<p>Tyto stránky využívají službu Universal Analytics  (Google Analytics), poskytovanou společností Google, Inc. (dále jen „Google“). Služba Universal Analytics používá souborů <a href="https://www.google.com/intl/cs_cz/policies/technologies/cookies/">„cookies„</a>, které jsou textovými soubory ukládanými do vašeho počítače, umožňující analýzu způsobu užívání této stránky jejími uživateli. Informace vygenerované souborem cookie o užívání stránky (včetně vaší IP adresy) budou společností Google přeneseny a uloženy na serverech ve Spojených státech.</p>
 <p>Google bude užívat tyto informace pro účely vyhodnocování užívání stránky a vytváření zpráv o její aktivitě, určených pro její provozovatele, a pro poskytování dalších služeb týkajících se činností na stránce a užívání internetu vůbec. Google může také poskytnout tyto informace třetím osobám, bude-li to požadováno zákonem nebo budou-li takovéto třetí osoby zpracovávat tyto informace pro Google. Google nebude spojovat vaši IP adresu s jakýmikoli jinými daty, která má k dispozici. Používáním této stránky souhlasíte se zpracováváním údajů o vás společností Google, a to způsobem a k účelu shora uvedeným.</p>
-<p>Detailní informace o Google Analytics a ochraně osobních údajů naleznete na http://www.google.com/intl/cs/privacy/privacy-policy.html.</p>
-<p>Pokud chcete zabránit sledování, můžete instalovat doplněk do vašeho webového prohlížeče (http://tools.google.com/dlpage/gaoptout).</p>
+<p>Detailní informace o Google Analytics a ochraně osobních údajů naleznete na <a href="http://www.google.com/intl/cs/privacy/privacy-policy.html">http://www.google.com/intl/cs/privacy/privacy-policy.html</a>.</p>
+<p>Pokud chcete zabránit sledování, můžete instalovat doplněk do vašeho webového prohlížeče (<a href="http://tools.google.com/dlpage/gaoptout">http://tools.google.com/dlpage/gaoptout</a>).</p>
 {% else %}
 <p>Nepoužíváme žádné kódy třetích stran.</p>
 {% endif %}
@@ -46,7 +54,7 @@
 <p>Google Analytics je analytický nástroj společnosti Google, který pomáhá majitelům webových stránek a aplikací porozumět, jakým způsobem návštěvníci stránky a aplikace využívají. Může používat sadu souborů cookies ke shromažďování informací a vytváření přehledů o používání webových stránek bez toho, aby se společnost Google dozvěděla jakékoli osobní identifikační údaje jednotlivých návštěvníků.</p>
 <p>Kromě vytváření přehledů o statistice využití webových stránek lze Universal Analytics společně s některým ze souborů cookie použít k zobrazení relevantnějších reklam ve službách Google (např. Vyhledávání Google) a na webu.</p>
 
-<h3>Další informace o souborech cookie služby Analytics a ochraně osobních údajů.</h3>
+<p>Další <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage">informace o souborech cookie služby Analytics a ochraně osobních údajů</a>.</p>
 
 <h4>Nastavení (odstranění) cookies</h4>
 <p>Cookies jsou ve většině prohlížečů ve výchozím nastavení povoleny. Pokud nechce uživatel cookies používat nebo pokud chce, aby internetový prohlížeč použití cookies oznámil, musí provést potřebná nastavení ve svém internetovém prohlížeči. Více informací o tom, jak zapnout a vypnout soubory cookies a jak je odstranit, najdete v nápovědě ve vašem prohlížeči.</p>
@@ -70,10 +78,10 @@
 <p>Obsahová stránka prezentace je vytvořena HTML 5, vizuální stránka prezentace pak s využitím CSS3.</p>
 
 <h2>Doporučená rozšíření prohlížeče</h2>
-<p>Ve formátu PDF nabízíme některé dokumenty a doplňující informace, které jsou příliš rozsáhlé a je vhodné jejich stažení. Pro zobrazení těchto dokumentů je třeba mít nainstalovaný prohlížeč Adobe Reader, který je zdarma ke stažení na stránkách společnosti  Adobe Systems, Inc.</p>
-<p>Část dokumentů je zveřejněna v některém z formátů aplikací Microsoft Office. Pro všechny tyto formáty je na stránkách společnosti Microsoft k dispozici prohlížeč, který si můžete zdarma stáhnout a nainstalovat na Váš počítač; případně si můžete zdarma stáhnout kancelářský balík Open Office.</p>
+<p>Ve formátu PDF nabízíme některé dokumenty a doplňující informace, které jsou příliš rozsáhlé a je vhodné jejich stažení. Pro zobrazení těchto dokumentů je třeba mít nainstalovaný prohlížeč Adobe Reader, který je zdarma ke stažení na stránkách společnosti  <a href="http://get.adobe.com/cz/reader/?promoid=BUIGO">Adobe Systems, Inc</a>.</p>
+<p>Část dokumentů je zveřejněna v některém z formátů aplikací Microsoft Office. Pro všechny tyto formáty je na stránkách společnosti <a href="http://www.microsoft.com/">Microsoft</a> k dispozici prohlížeč, který si můžete zdarma stáhnout a nainstalovat na Váš počítač; případně si můžete zdarma stáhnout kancelářský balík <a href="http://www.openoffice.org/">Open Office</a>.</p>
 
 <h2>Informace o autorovi webu</h2>
-<p>{% if widget.made_by %}WWW stránky {{ widget.made_by }}.{% endif %} Stránky spravuje {{ widget.company }}. Prezentace / portál je provozován(-a) na publikačním systému LeonardoCMS. V případě dotazů nebo nalezení technických problémů je možné kontaktovat autory e-mailem na {{ widget.email_address }}.</p>
+<p>{% if widget.made_by %}WWW stránky {{ widget.made_by }}.{% endif %} Stránky spravuje {{ widget.company_name }}. Prezentace / portál je provozován(-a) na publikačním systému LeonardoCMS. V případě dotazů nebo nalezení technických problémů je možné kontaktovat autory e-mailem na <a href="mailto:{{ widget.email_address }}">{{ widget.email_address }}</a>.</p>
 
 {% endblock %}
