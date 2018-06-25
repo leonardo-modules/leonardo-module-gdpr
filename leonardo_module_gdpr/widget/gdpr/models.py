@@ -8,12 +8,12 @@ from leonardo.utils import get_htmltext_widget
 
 class GDPRWidget(Widget):
 
-    domain_name = models.CharField("Domain name")
-    company_name = models.CharField("Company name")
-    email_address = models.CharField("Webmaster e-mail")
+    domain_name = models.CharField("Domain name", max_length=255)
+    company_name = models.CharField("Company name", max_length=255)
+    email_address = models.CharField("Webmaster e-mail", max_length=255)
     resources = models.TextField(
         _('Resources for obtaining personal information '), blank=True, default="<p>%s</p>" % ('Empty element'))
-    made_by = models.CharField("Made by with prefix")
+    made_by = models.CharField("Made by with prefix", max_length=255)
 
     widgets = {
         'resources': get_htmltext_widget
