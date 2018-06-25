@@ -19,6 +19,8 @@ class GDPRWidget(Widget):
         'resources': get_htmltext_widget
     }
 
+    form_size = 'lg'
+
     class Meta:
         abstract = True
         verbose_name = 'GDPR'
